@@ -1,0 +1,8 @@
+Patient_ID,Timestamp,Patient_Name,Age,Gender,Contact,Referring_Doctor,Modality,Emergency,Base_Fee,Surcharge,Total_Fee,Report_Status,Clinical_History
+RAD-2026-0807,24/10/2026 15:33,ABC,23,Male,1234567890,Dr.X.Y.Z,Sonography (USG Abdomen & Pelvis),No,1200,0,1200,Draft Pending,"Abdominal discomfort, rule out pathology"
+RAD-2026-0806,24/10/2026 15:32,ABC,23,Male,9876543210,Dr. A. K. Joshi (MD Med),Sonography (USG Abdomen & Pelvis),No,1200,0,1200,Draft Pending,"Abdominal discomfort, rule out pathology"
+RAD-2026-0801,24/10/2026 09:15,RAJESH SHARMA,48,Male,9820145890,Dr. A. K. Joshi (MD Med),Sonography (USG Abdomen & Pelvis),No,1200,0,1200,Draft Pending,"Dyspepsia, epigastric fullness, fatty food intolerance"
+RAD-2026-0802,24/10/2026 09:45,PRIYA NAIR,28,Female,9819234120,Dr. Sunita Kulkarni (MS OBGYN),Ultrasound - Obstetric (Anomaly / Growth),No,1500,0,1500,Draft Pending,Routine second-trimester anomaly evaluation 20 weeks
+RAD-2026-0803,24/10/2026 10:20,VIKRAM SINGHANIA,62,Male,9769012384,Dr. R. F. Mehta (MD Chest),X-Ray (Chest / Spine / Extremity),No,500,0,500,Verified & Ready,"Persistent non-productive cough, evaluate consolidation"
+RAD-2026-0804,24/10/2026 10:50,SUNITA VERMA,54,Female,9845091234,Dr. Dilawar Mulani (MD),Sonography (USG Abdomen & Pelvis),Yes,1200,300,1500,Signed & Dispatched (DR. ANAND R. JOSHI),"Right flank pain, rule out calculus / hydronephrosis"
+RAD-2026-0805,24/10/2026 11:30,AMITABH DESHMUKH,41,Male,9820556677,Dr. Sanjay Deshmukh (DM Neuro),MRI (Brain / Spine / Joint),No,5000,0,5000,Draft Pending,"Chronic tension-type headache, vertigo episodes"
