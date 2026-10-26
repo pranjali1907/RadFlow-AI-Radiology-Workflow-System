@@ -64,3 +64,55 @@ python -m streamlit run app.py
 ```
 
 *(Or simply double-click [`run.bat`](file:///c:/Users/pranj/OneDrive/Desktop/genai%20micro/run.bat) in the project folder).*
+
+---
+
+## 🌐 Cloud Deployment Guide
+
+### Option 1: Deploy on Render (Recommended for Streamlit)
+
+Render provides persistent Python hosting with native WebSocket support, which Streamlit requires for real-time reactivity and audio processing.
+
+1. **Sign in to Render**: Go to [dashboard.render.com](https://dashboard.render.com/) and link your GitHub account.
+2. **Create New Web Service**:
+   - Click **New +** > **Web Service**.
+   - Select your repository: `pranjali1907/RadFlow-AI-Radiology-Workflow-System`.
+3. **Configure Service Settings**:
+   - **Name**: `radflow-ai`
+   - **Environment**: `Python 3`
+   - **Region**: Any (e.g. `Oregon (US West)` or `Frankfurt (EU)`)
+   - **Branch**: `main`
+   - **Build Command**: `pip install --upgrade pip && pip install -r requirements.txt`
+   - **Start Command**: `streamlit run app.py --server.port $PORT --server.address 0.0.0.0`
+4. **Environment Variables (Optional)**:
+   - Add `GEMINI_API_KEY` under the Environment tab if you want cloud OCR and Gemini capabilities pre-configured.
+5. **Deploy**:
+   - Click **Create Web Service**. Render will install dependencies, launch Streamlit, and generate a live URL (e.g. `https://radflow-ai.onrender.com`).
+
+*(Note: `render.yaml` is included in this repository for automatic Blueprints deployment).*
+
+---
+
+### Option 2: Deploy on Streamlit Community Cloud (100% Free & 1-Click)
+
+1. Go to [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
+2. Click **New app**.
+3. Select:
+   - **Repository**: `pranjali1907/RadFlow-AI-Radiology-Workflow-System`
+   - **Branch**: `main`
+   - **Main file path**: `app.py`
+4. Click **Deploy!** Your app will be live within 60 seconds with unlimited runtime and automatic SSL.
+
+---
+
+### Option 3: Deploying on Vercel
+
+> **Important Architecture Note for Vercel**:  
+> Vercel is a **serverless** platform designed for stateless request/response apps (Next.js, React, Node APIs). Streamlit, however, requires a long-lived Python server with persistent bidirectional WebSockets (`st.session_state` and live audio streaming).  
+> 
+> Because serverless functions on Vercel automatically sleep and have a 10–15s execution timeout, running full stateful Streamlit on Vercel can cause WebSocket disconnections. For production Streamlit applications, **Render** or **Streamlit Community Cloud** is the industry standard.
+>
+> If you have a custom Next.js/React frontend on Vercel, you can connect it directly to your Render Streamlit backend or embed it via an iframe:
+> ```html
+> <iframe src="https://your-radflow-app.onrender.com" width="100%" height="900px" frameborder="0"></iframe>
+> ```
